@@ -58,7 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_131608) do
     t.string "category", default: "", null: false
     t.string "location", default: "", null: false
     t.string "details", default: "", null: false
-    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -70,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_131608) do
     t.string "fullname", default: "", null: false
     t.string "address", default: "", null: false
     t.string "phone_number", default: "", null: false
-    t.string "avatar"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

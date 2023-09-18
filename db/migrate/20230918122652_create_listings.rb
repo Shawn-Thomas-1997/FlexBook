@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.string :category, null: false, default: ""
       t.string :location, null: false, default: ""
       t.string :details, null: false, default: ""
-      t.string :image
+
 
       t.timestamps
     end
