@@ -2,3 +2,24 @@
 .homepage-heading {
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.form-container {
+  padding-top: 20px;
+  max-width: 600px;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  .form-group {
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    .form-control.input-white {
+      background-color: white;
+      border: none;
+      &:focus {
+        border: none;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
