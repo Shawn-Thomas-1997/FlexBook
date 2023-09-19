@@ -1,2 +1,14 @@
-<h1 class="homepage-heading">FlexBook</h1>
-<p>Your number one fitness service provider</p>
+<div class="homepage-container">
+  <h1 class="homepage-heading">FlexBook</h1>
+  <p>Your number one fitness service provider</p>
+
+  <div class="listings-row">
+    <% @listings.each do |listing| %>
+      <div class="listing">
+        <strong><%= link_to listing.category %></strong>
+        <%= listing.location %>
+        <%= listing.details %>
+      </div>
+    <% end %>
+  </div>
+</div>

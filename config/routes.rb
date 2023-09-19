@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "certifications", to: "pages#certifications"
   get "calendar", to: "pages#calendar"
+  resources :listings, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 end
