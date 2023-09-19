@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -13,6 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do |resource|
       resource.trainer = params[:user][:trainer] == "1"
+      resource.gender = params[:user][:gender]
       resource.save
     end
   end
@@ -23,9 +24,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super do |resource|
+      resource.age = params[:user][:age]
+      resource.height = params[:user][:height]
+      resource.weight = params[:user][:weight]
+      resource.goal = params[:user][:goal]
+      resource.fitness_level = params[:user][:fitness_level]
+      resource.address = params[:user][:address]
+      resource.email = params[:user][:email]
+      resource.save
+    end
+  end
 
   # DELETE /resource
   # def destroy

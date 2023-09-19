@@ -70,6 +70,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_131608) do
     t.string "address", default: "", null: false
     t.string "phone_number", default: "", null: false
     t.boolean "trainer", default: false, null: false
+    t.string "age", default: "", null: false
+    t.string "goal"
+    t.string "gender", default: "", null: false
+    t.string "fitness_level"
+    t.string "height"
+    t.string "weight"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
