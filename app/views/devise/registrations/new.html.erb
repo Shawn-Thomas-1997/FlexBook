@@ -25,6 +25,9 @@
                 autofocus: true,
                 input_html: { autocomplete: "phone_number" }%>
     <%= f.input :photo, as: :file %>
+    Are you a trainer?
+    <%= f.check_box :trainer %>
+    <br>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

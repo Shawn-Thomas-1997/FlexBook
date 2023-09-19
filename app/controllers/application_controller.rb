@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :fullname, :address, :phone_number, :photo])
   end
+
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :password, :username, :fullname, :address, :phone_number, :trainer])
+  end
 end
