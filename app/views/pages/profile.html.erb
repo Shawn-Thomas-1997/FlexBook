@@ -1,0 +1,10 @@
+<%= cl_image_tag current_user.photo.key %>
+<h1><%= current_user.fullname %></h1>
+<h2>"<%= current_user.username %>"</h2>
+
+<% if current_user.trainer? %>
+  <h3><%= current_user.phone_number %></h3>
+  <h3><%= current_user.email %></h3>
+  <%= link_to "Certifications", certifications_path %>
+  <%= link_to "My Training Calendar", calendar_path %>
+<% end %>
