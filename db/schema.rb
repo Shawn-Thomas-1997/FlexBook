@@ -47,21 +47,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_111600) do
     t.string "status"
     t.string "comment"
     t.bigint "listing_id", null: false
-    t.bigint "booking_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_bookings_on_booking_id"
     t.index ["listing_id"], name: "index_bookings_on_listing_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "listings", force: :cascade do |t|
     t.string "category", default: "", null: false
     t.string "location", default: "", null: false
     t.string "details", default: "", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,7 +73,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_111600) do
     t.string "fullname", default: "", null: false
     t.string "address", default: "", null: false
     t.string "phone_number", default: "", null: false
+    t.string "gender", default: "", null: false
     t.boolean "trainer", default: false, null: false
+    t.string "age", default: "", null: false
+    t.string "goal"
+    t.string "fitness_level"
+    t.string "height"
+    t.string "weight"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -83,6 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_111600) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "bookings"
   add_foreign_key "bookings", "listings"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "listings", "users"
 end
