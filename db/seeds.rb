@@ -20,14 +20,14 @@ puts "done creating users"
 fitness_services = ["Personal Training", "Nutritionist", "Physio", "Pilates"]
 trainers = User.where(trainer: true)
 trainers.each do |trainer|
-    10.times do
-      Listing.create(
-        category: fitness_services.sample,
-        location: Faker::Address.street_address,
-        details: Faker::TvShows::HowIMetYourMother.quote,
-        user_id: trainer.id
-      )
-    end
+  10.times do
+    Listing.create(
+      category: fitness_services.sample,
+      location: Faker::Address.street_address,
+      details: Faker::TvShows::HowIMetYourMother.quote,
+      user_id: trainer.id
+    )
+  end
 
-puts "done creating listings"
+  puts "done creating listings"
 end
