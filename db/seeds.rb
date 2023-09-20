@@ -29,5 +29,6 @@ trainers.each do |trainer|
       )
     end
 
-puts "done creating listings"
+
+  puts "done creating listings"
 end
