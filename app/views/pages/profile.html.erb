@@ -1,4 +1,8 @@
-<%= cl_image_tag current_user.photo.key %>
+<% if current_user.photo.present? %>
+            <%= cl_image_tag current_user.photo.key %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png" %>
+          <% end %>
 <h1><%= current_user.fullname %></h1>
 <h2>"<%= current_user.username %>"</h2>
 
@@ -30,4 +34,3 @@
 </div>
 
 <% end %>
-
