@@ -6,6 +6,8 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @booking = Booking.new
+    @user = current_user
   end
 
   def new
@@ -14,7 +16,6 @@ class ListingsController < ApplicationController
 
   def create
     @listing = current_user.listings.new(listing_params)
-
     if @listing.save
       redirect_to listing_path(@listing)
     else
@@ -31,6 +32,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:category, :location, :details, :user_id )
+    params.require(:listing).permit(:category, :location, :details, :user_id)
   end
 end

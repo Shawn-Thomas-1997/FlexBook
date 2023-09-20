@@ -1,0 +1,14 @@
+<div class="listing-container">
+<% @user = User.find(@booking.user_id) %>
+  <h1 class="header"><%= @user.fullname %></h1>
+
+  <h2><%= @booking.date %></h2>
+
+  <h3><%= @listing.category %></h3>
+
+  <p><%= @booking.status %></p>
+
+  <h3><%= @booking.comment %></h3>
+
+  <%= link_to "My Bookings", listing_bookings_path(@booking) %>
+</div>

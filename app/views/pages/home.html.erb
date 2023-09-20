@@ -4,11 +4,16 @@
 
   <div class="listings-row">
     <% @listings.each do |listing| %>
+          <% user = User.find(listing.user_id) %>
+        <%= @fullname = user.fullname.titleize %>
       <div class="listing">
-        <strong><%= link_to listing.category %></strong>
+        <%= link_to listing_path(listing) do %>
+          <strong><%= listing.category %></strong>
+        <% end %>
         <%= listing.location %>
         <%= listing.details %>
       </div>
     <% end %>
   </div>
+
 </div>
