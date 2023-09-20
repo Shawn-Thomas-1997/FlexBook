@@ -1,12 +1,15 @@
 <% if user_signed_in? %>
 
 <div class="listing-form">
+
+<div class="form-container">
+
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-center w-50">
-      <div class="container p-4 rounded shadow">
+      <div class="create-list-container p-4 rounded shadow">
         <h1>Create a New Listing</h1>
         <%= simple_form_for [@listing] do |f| %>
-          <div class="form-group">
+          <div class="listing-form-group">
               <%= f.input :category,
                           required: true,
                           autofocus: true,
@@ -14,7 +17,7 @@
                           wrapper_html: { class: 'col-sm-12' },
                           label_html: { class: 'col-sm-2 control-label' } %>
           </div>
-          <div class="form-group">
+          <div class="listing-form-group">
               <%= f.input :location,
                           required: true,
                           autofocus: true,
@@ -22,7 +25,7 @@
                           wrapper_html: { class: 'col-sm-12' },
                           label_html: { class: 'col-sm-2 control-label' } %>
           </div>
-          <div class="form-group">
+          <div class="listing-form-group">
               <%= f.input :details,
                           required: true,
                           autofocus: true,
@@ -36,3 +39,8 @@
     </div>
   </div>
 </div>
+<% else %>
+
+  <%= render 'shared/log_in_prompt' %>
+
+<% end %>
