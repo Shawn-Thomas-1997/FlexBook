@@ -12,7 +12,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :phone_number, null: false, default: ""
       t.string :gender, null: false, default: ""
       t.boolean :trainer, null: false, default: false
-
+      t.string :age, null: false, default: ""
+      t.string :goal
+      t.string :gender, null: false, default: ""
+      t.string :fitness_level
+      t.string :height
+      t.string :weight
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

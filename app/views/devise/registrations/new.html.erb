@@ -22,6 +22,18 @@
                   label_html: { class: 'col-sm-2 control-label' } %>
     </div>
 
+
+    <div class="form-group">
+      <%= f.input :gender,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "gender" },
+                  wrapper_html: { class: 'col-sm-12' },
+                  label_html: { class: 'col-sm-2 control-label' },
+                  collection: [['Male', 'Male'], ['Female', 'Female']],
+                  as: :radio_buttons %>
+    </div>
+
     <div class="form-group">
       <%= f.input :email,
                   required: true,
@@ -56,6 +68,11 @@
     </div>
 
     <div class="form-group">
+      <p>Are you a trainer?</p>
+      <%= f.check_box :trainer %>
+    </div>
+
+    <div class="form-group">
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -81,4 +98,3 @@
 
   <%= render "devise/shared/links" %>
 </div>
-
