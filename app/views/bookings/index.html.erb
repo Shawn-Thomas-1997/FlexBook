@@ -1,1 +1,29 @@
-My Bookings
+<% if user_signed_in? %>
+
+<div class="homepage-container">
+  <h1 class="homepage-heading">My Bookings</h1>
+  <p>Manage you commitments</p>
+
+  <div class="listings-row">
+    <% @bookings.each do |booking| %>
+          <% user = User.find(booking.user_id) %>
+      <div class="listing">
+        <p><%= @fullname = user.fullname.titleize %></p>
+        <p>Booking Date: <%= booking.date %></p>
+        <p><%= booking.comment %></p>
+        <p>Status: <%= booking.status %></p>
+        <%= link_to 'Delete', booking_path(booking),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: 'btn btn-secondary' %>
+        <%= link_to 'View', listing_booking_path(booking.listing, booking),
+        class: 'btn btn-secondary'%>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% else %>
+
+  <%= render 'shared/log_in_prompt' %>
+
+<% end %>

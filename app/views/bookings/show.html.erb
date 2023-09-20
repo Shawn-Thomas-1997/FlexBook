@@ -1,3 +1,5 @@
+<% if user_signed_in? %>
+
 <div class="listing-container">
 <% @user = User.find(@booking.user_id) %>
   <h1 class="header"><%= @user.fullname %></h1>
@@ -12,3 +14,9 @@
 
   <%= link_to "My Bookings", listing_bookings_path(@booking) %>
 </div>
+
+<% else %>
+
+  <%= render 'shared/log_in_prompt' %>
+
+<% end %>
