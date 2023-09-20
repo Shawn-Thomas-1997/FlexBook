@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   # The home pages will be the listings index. We can remove this home method once we have that.
   def home
     @listings = Listing.all
+    @users = User.all
+    # user = User.find(params[:id])
+    # @username = user.username
   end
 
   def profile
