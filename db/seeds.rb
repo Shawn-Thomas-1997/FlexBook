@@ -3,7 +3,7 @@ require "faker"
 User.destroy_all
 puts "clearing database....."
 
-50.times do
+10.times do
   User.create(
     fullname: Faker::FunnyName.three_word_name,
     username: Faker::Internet.username,
@@ -20,7 +20,7 @@ puts "done creating users"
 fitness_services = ["Personal Training", "Nutritionist", "Physio", "Pilates"]
 trainers = User.where(trainer: true)
 trainers.each do |trainer|
-    10.times do
+    2.times do
       Listing.create(
         category: fitness_services.sample,
         location: Faker::Address.street_address,
