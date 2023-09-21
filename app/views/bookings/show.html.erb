@@ -4,9 +4,9 @@
 
   <div class="listing-show-container">
     <% @user = User.find(@booking.user_id) %>
-      <h1 class="header"><%= @user.fullname %></h1>
+      <h1 class="homepage-heading"><%= @user.fullname %></h1>
 
-      <h2><%= @booking.date %></h2>
+      <h2 class="listing-sub-heading"><%= @booking.date %></h2>
 
       <h3><%= @listing.category %></h3>
 

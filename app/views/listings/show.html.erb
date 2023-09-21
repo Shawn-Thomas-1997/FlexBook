@@ -5,10 +5,10 @@
   <% if user_signed_in? %>
     <div class="listing-container">
           <% user = User.find(@listing.user_id) %>
-          <h1><%= @fullname = user.fullname.titleize %></h1>
-      <h3 class="sub-heading"><%= @listing.category %></h3>
-        <h4><%= @listing.location %></h4>
-        <p><%= @listing.details %></p>
+          <h1 class="listing-heading"><%= @fullname = user.fullname.titleize %></h1>
+        <h3 class="listing-sub-heading"><%= @listing.category %></h3>
+        <h4 class="listing-paragraph"><%= @listing.location %></h4>
+        <p class="listing-paragraph"><%= @listing.details %></p>
     </div>
   </div>
 </div>
@@ -18,10 +18,10 @@
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  <div class="listing-show-links">
 
 
-<h4 class="m-4">Reviews</h4>
+<div class="listing-show-links">
+<h4 class="listing-sub-heading">Reviews</h4>
 <ul class="list-group m-4">
   <% @reviews.each do |review| %>
     <li class="list-group-item"><%= review.content %></li>
@@ -35,14 +35,15 @@
         <div class="star <%= 'filled' if review.rating >= 5 %>"></div>
       </div>
     </div>
+  </div>
   <% end %>
 </ul>
-
-      <%= link_to "Make a Booking", new_listing_booking_path(@listing, @booking), class:"sub-heading" %>
+  <div class="listing-show-links">
+      <%= link_to "Make a Booking", new_listing_booking_path(@listing, @booking), class: "btn btn-outline-light" %>
     </div>
     <div class="listing-show-links">
       <br>
-      <%= link_to "Back to Home", root_path, class:"sub-heading" %>
+      <%= link_to "Back to Home", root_path, class: "btn btn-outline-light" %>
   </div>
   <% else %>
   <%= render 'shared/log_in_prompt' %>
