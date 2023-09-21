@@ -1,18 +1,19 @@
 <div class="homepage-container">
   <h1 class="homepage-heading">FlexBook</h1>
-  <p class="homepage-heading">Your number one fitness service provider</p>
+    <p class="homepage-heading">Your number one fitness service provider</p>
 
   <div class="listings-row">
     <% @listings.each do |listing| %>
       <%= link_to listing_path(listing) do %>
         <div class="listing">
           <% user = User.find(listing.user_id) %>
-          <%= @fullname = user.fullname.titleize %>
+          <h4><%= @fullname = user.fullname.titleize %></h4>
           <br>
           <div class="sub-heading"><strong><%= listing.category %></strong></div>
           <br>
           <%= listing.details %>
-          <%= listing.location %>
+          <br>
+          <div class="sub-heading"><strong><%= listing.location %></strong></div>
         </div>
       <% end %>
     <% end %>

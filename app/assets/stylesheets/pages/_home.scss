@@ -5,12 +5,13 @@ color: white;
 }
 
 .homepage-container {
+  width: 100%;
+  max-width: 100%;
   padding-top: 20px;
-  max-width: 1200px;
-  justify-content: center;
   text-align: center;
   margin: 0 auto;
   background-color: #242423;
+  box-sizing: border-box;
 }
 
 .login-container {
@@ -18,4 +19,8 @@ color: white;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
+}
+
+body {
+  margin: 0;
 }
