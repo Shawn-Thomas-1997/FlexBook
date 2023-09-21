@@ -33,6 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       resource.fitness_level = params[:user][:fitness_level]
       resource.address = params[:user][:address]
       resource.email = params[:user][:email]
+      resource.photo = params[:user][:photo]
       resource.save
     end
   end

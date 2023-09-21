@@ -18,4 +18,12 @@ class PagesController < ApplicationController
   def calendar
     @user = current_user
   end
+
+  def trainer_view
+    @user = current_user
+  end
+
+  def client_view
+    @user = current_user
+  end
 end
