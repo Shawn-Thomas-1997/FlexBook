@@ -22,13 +22,13 @@
       <%= link_to listing_path(listing) do %>
         <div class="listing">
           <% user = User.find(listing.user_id) %>
-          <h4><%= @fullname = user.fullname.titleize %></h4>
+          <h4 class="listing-heading"><%= @fullname = user.fullname.titleize %></h4>
           <br>
-          <div class="sub-heading"><strong><%= listing.category %></strong></div>
+          <div class="listing-sub-heading"><strong><%= listing.category %></strong></div>
           <br>
-          <%= listing.details %>
+          <div class="listing-paragraph"><strong><%= listing.details %></strong></div>
           <br>
-          <div class="sub-heading"><strong><%= listing.location %></strong></div>
+          <div class="listing-paragraph"><strong><%= listing.location %></strong></div>
         </div>
       <% end %>
     <% end %>

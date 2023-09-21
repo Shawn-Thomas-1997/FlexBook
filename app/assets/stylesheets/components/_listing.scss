@@ -1,3 +1,26 @@
+
+.listing-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 40px ;
+  letter-spacing: 2px;
+  }
+
+.listing-sub-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #1EA896;
+  font-size: 25px ;
+  letter-spacing: 2px;
+}
+
+.listing-paragraph {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 16px ;
+  letter-spacing: 2px;
+}
+
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -39,12 +62,12 @@ body, html {
 
 .listing {
   margin: 20px;
-  border: 1 px solid rgb(85, 85, 85);
+  border: 1 px solid #131616(85, 85, 85);
   border-radius: 15px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #373736;
+  background: linear-gradient(to bottom, #4b4a4a, #272727);
   color: white;
   padding: 20px;
+  box-shadow: 5px 5px 10px #000000(0, 0, 255, 0.5);
 }
 
 .sub-heading {
@@ -65,23 +88,19 @@ a {
   text-align: center;
   margin: 0 auto;
   .listing-form-group {
-    background-color: #373736;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     color:white;
 
     .form-control.input-white {
       color:white;
-      background-color: #242423;
       border: none;
       &:focus {
         border: none;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
       }
     }
   }
 }
 .create-list-container{
-  background-color: #242423;
+  background: linear-gradient(to bottom, #4b4a4a, #272727);
   margin-top: 20px;
   border-radius: 15px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -98,6 +117,7 @@ a {
   border: solid 0.5px #1EA896;
   border-radius: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #4b4a4a, #272727);
 }
 
 .listing-show-container:hover {

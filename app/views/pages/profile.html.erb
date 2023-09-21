@@ -4,7 +4,7 @@
   <div>
     <% if user_signed_in? %>
       <% if current_user.photo.present? %>
-        <%= cl_image_tag current_user.photo.key %>
+        <%= cl_image_tag current_user.photo.key, class:"profile-photo" %>
       <% else %>
       <div >
         <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png", class:"profile-photo" %>
@@ -13,32 +13,26 @@
   </div>
 
       <div>
-        <h1 class="sub-heading" ><%= current_user.fullname %></h1>
+        <h1 class="profile-heading" ><%= current_user.fullname %></h1>
       </div>
-      <h2>"<%= current_user.username %>"</h2>
-      <p>Gender: <%= current_user.gender %></p>
-      <p>Age: <%= current_user.age %></p>
-      <p>Goal: <%= current_user.goal %></p>
-      <p>Fitness Level: <%= current_user.fitness_level %></p>
-      <p>Height: <%= current_user.height %></p>
-      <p>Weight: <%= current_user.weight %></p>
-      <h3><%= current_user.phone_number %></h3>
+      <h2><em><%= current_user.username %></em></h2>
+      <p class="profile-paragraph">Gender: <%= current_user.gender %></p>
+      <p class="profile-paragraph">Age: <%= current_user.age %></p>
+      <p class="profile-paragraph">Goal: <%= current_user.goal %></p>
+      <p class="profile-paragraph">Fitness Level: <%= current_user.fitness_level %></p>
+      <p class="profile-paragraph">Height: <%= current_user.height %></p>
+      <p class="profile-paragraph">Weight: <%= current_user.weight %></p>
+      <h3 class="profile-paragraph"><%= current_user.phone_number %></h3>
 
-      <h3 class="sub-heading"><%= current_user.email %></h3>
+      <h3 class="profile-paragraph"><%= current_user.email %></h3>
       <div class="m-2">
       <%= link_to "Certifications", certifications_path, class: "btn btn-outline-light" %>
 
       <%= link_to "My Training Calendar", calendar_path, class: "btn btn-outline-light" %>
 
-      <h3><%= current_user.email %></h3>
-      <%= link_to "Certifications", certifications_path %>
-      <%= link_to "My Training Calendar", calendar_path %>
-      <%= link_to "Add New Listing", new_listing_path %>
-      <%= link_to "My Bookings", listing_bookings_path(@listings) %>
-
       <%= link_to "Add New Listing", new_listing_path, class: "btn btn-outline-light" %>
 
-      <%= link_to "My Bookings", listing_bookings_path(@listing), class: "btn btn-outline-light" %>
+      <%= link_to "My Bookings", listing_bookings_path(@listings), class: "btn btn-outline-light" %>
       </div>
       <div class="mt-2">
         <%= link_to edit_user_registration_path, class: "btn btn-outline-light" do %>

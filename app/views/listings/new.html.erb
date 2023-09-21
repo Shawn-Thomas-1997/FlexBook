@@ -7,7 +7,7 @@
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-center w-50">
       <div class="create-list-container p-4 rounded shadow">
-        <h1>Create a New Listing</h1>
+        <h1 class="listing-heading">Create a New Listing</h1>
         <%= simple_form_for [@listing] do |f| %>
           <div class="listing-form-group">
               <%= f.input :category,
@@ -15,7 +15,7 @@
                           autofocus: true,
                           input_html: { autocomplete: "category" },
                           wrapper_html: { class: 'col-sm-12' },
-                          label_html: { class: 'col-sm-2 control-label' } %>
+                          label_html: { class: 'listing-paragraph col-sm-2 control-label' } %>
           </div>
           <div class="listing-form-group">
               <%= f.input :location,
@@ -23,7 +23,7 @@
                           autofocus: true,
                           input_html: { autocomplete: "location" },
                           wrapper_html: { class: 'col-sm-12' },
-                          label_html: { class: 'col-sm-2 control-label' } %>
+                          label_html: { class: 'listing-paragraph col-sm-2 control-label' } %>
           </div>
           <div class="listing-form-group">
               <%= f.input :details,
@@ -31,9 +31,9 @@
                           autofocus: true,
                           input_html: { autocomplete: "details" },
                           wrapper_html: { class: 'col-sm-12' },
-                          label_html: { class: 'col-sm-2 control-label' } %>
+                          label_html: { class: 'listing-paragraph col-sm-2 control-label' } %>
           </div>
-            <%= f.submit "Create Listing", class: "btn btn-primary shadow-sm mt-3" %>
+            <%= f.submit "Create Listing", class: "btn btn-outline-light shadow-sm mt-3" %>
           <% end %>
       </div>
     </div>
