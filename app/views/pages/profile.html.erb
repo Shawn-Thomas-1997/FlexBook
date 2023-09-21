@@ -1,18 +1,20 @@
 <% if user_signed_in? %>
-
-<% if current_user.photo.present? %>
-  <%= cl_image_tag current_user.photo.key %>
-<% else %>
-  <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png" %>
-<% end %>
-<% @listing = Listing.find(current_user.id) %>
-<h1><%= current_user.fullname %></h1>
-<h2>"<%= current_user.username %>"</h2>
-
+  <% if current_user.photo.present? %>
+    <%= cl_image_tag current_user.photo.key %>
+  <% else %>
+    <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png" %>
+  <% end %>
+  <% @listing = Listing.find(current_user.id) %>
+  <div>
+    <h1><%= current_user.fullname %></h1><%= image_tag "https://res.cloudinary.com/TrainerIcon.png" %>
+  </div>
+  <h2>"<%= current_user.username %>"</h2>
   <p>Gender: <%= current_user.gender %></p>
   <p>Age: <%= current_user.age %></p>
-
-<% if current_user.trainer? %>
+  <p>Goal: <%= current_user.goal %></p>
+  <p>Fitness Level: <%= current_user.fitness_level %></p>
+  <p>Height: <%= current_user.height %></p>
+  <p>Weight: <%= current_user.weight %></p>
   <h3><%= current_user.phone_number %></h3>
   <h3><%= current_user.email %></h3>
   <%= link_to "Certifications", certifications_path %>
@@ -20,28 +22,13 @@
   <%= link_to "Add New Listing", new_listing_path %>
   <%= link_to "My Bookings", listing_bookings_path(@listing) %>
 
-    <div data-controller="toggle" class="mt-5">
-      <%= link_to edit_user_registration_path, class: "btn btn-outline-danger" do %>
-        Update Details
-      <% end %>
-    </div>
-
+  <div class="mt-5">
+    <%= link_to edit_user_registration_path, class: "btn btn-outline-primary" do %>
+      Update Details
+    <% end %>
+  </div>
 <% else %>
-  <p>Goal: <%= current_user.goal %></p>
-  <p>Fitness Level: <%= current_user.fitness_level %></p>
-  <p>Height: <%= current_user.height %></p>
-  <p>Weight: <%= current_user.weight %></p>
-  <%= link_to "My Bookings", listing_bookings_path(@listing) %>
-<div data-controller="toggle" class="mt-5">
-  <%= link_to edit_user_registration_path, class: "btn btn-outline-primary" do %>
-    Update Details
-  <% end %>
-</div>
-
-<% end %>
-
-<% else %>
-
-  <%= render 'shared/log_in_prompt' %>
-
+  <div>
+    <%= render 'shared/log_in_prompt' %>
+  </div>
 <% end %>

@@ -6,12 +6,10 @@
     <%= f.input :address %>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :phone_number, required: true, autofocus: true %>
-<%  if !current_user.trainer %>
     <%= f.input :height %>
     <%= f.input :weight %>
     <%= f.input :goal %>
     <%= f.input :fitness_level %>
-<% end %>
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,

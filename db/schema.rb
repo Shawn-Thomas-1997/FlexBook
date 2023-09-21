@@ -73,10 +73,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_20_111600) do
     t.string "fullname", default: "", null: false
     t.string "address", default: "", null: false
     t.string "phone_number", default: "", null: false
-    t.string "gender", default: "", null: false
     t.boolean "trainer", default: false, null: false
     t.string "age", default: "", null: false
     t.string "goal"
+    t.string "gender", default: "", null: false
     t.string "fitness_level"
     t.string "height"
     t.string "weight"
