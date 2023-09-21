@@ -3,12 +3,12 @@ class PagesController < ApplicationController
   def home
     @listings = Listing.all
     @users = User.all
-    # user = User.find(params[:id])
-    # @username = user.username
   end
 
   def profile
     @user = current_user
+    @listings = Listing.all
+    @users = User.all
   end
 
   def certifications

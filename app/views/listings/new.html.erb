@@ -1,4 +1,9 @@
+<% if user_signed_in? %>
+
+<div class="listing-form">
+
 <div class="form-container">
+
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-center w-50">
       <div class="create-list-container p-4 rounded shadow">
@@ -34,3 +39,8 @@
     </div>
   </div>
 </div>
+<% else %>
+
+  <%= render 'shared/log_in_prompt' %>
+
+<% end %>
