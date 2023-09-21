@@ -6,7 +6,14 @@
 
   <h2><%= @listing.location %></h2>
 
-  <h3><%= @listing.details %></h2>
+
+    <div class="fixed-element" style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  <h3><%= @listing.details %></h3>
   <%= link_to "Make a Booking", new_listing_booking_path(@listing, @booking) %>
   <%= link_to "Back to Home", root_path %>
 </div>
