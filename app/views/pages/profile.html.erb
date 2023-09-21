@@ -11,7 +11,7 @@
       </div>
       <% end %>
   </div>
-      <% @listing = Listing.find(current_user.id) %>
+
       <div>
         <h1 class="sub-heading" ><%= current_user.fullname %></h1>
       </div>
@@ -23,11 +23,18 @@
       <p>Height: <%= current_user.height %></p>
       <p>Weight: <%= current_user.weight %></p>
       <h3><%= current_user.phone_number %></h3>
+
       <h3 class="sub-heading"><%= current_user.email %></h3>
       <div class="m-2">
       <%= link_to "Certifications", certifications_path, class: "btn btn-outline-light" %>
 
       <%= link_to "My Training Calendar", calendar_path, class: "btn btn-outline-light" %>
+
+      <h3><%= current_user.email %></h3>
+      <%= link_to "Certifications", certifications_path %>
+      <%= link_to "My Training Calendar", calendar_path %>
+      <%= link_to "Add New Listing", new_listing_path %>
+      <%= link_to "My Bookings", listing_bookings_path(@listings) %>
 
       <%= link_to "Add New Listing", new_listing_path, class: "btn btn-outline-light" %>
 
