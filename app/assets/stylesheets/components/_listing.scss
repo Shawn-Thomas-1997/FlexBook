@@ -26,7 +26,10 @@ body, html {
 
 .listings-row {
   display: grid;
-  max-width: 600px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  max-width: 1000px;
+  max-height: 80px;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
@@ -85,18 +88,29 @@ a {
 }
 
 .listing-show-container {
+  padding: 20px;
   max-width: 600px;
   color:white;
   justify-content: center;
   text-align: center;
   margin: 0 auto;
   text-decoration: none;
-  border: solid 1px #1EA896;
+  border: solid 0.5px #1EA896;
   border-radius: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .listing-show-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.listing-show-links{
+  justify-content: center;
+  text-align: center;
+}
+
+.listing-show-links:hover {
   transform: scale(1.05);
   transition: transform 0.2s ease-in-out;
 }
