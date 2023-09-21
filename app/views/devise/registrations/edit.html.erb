@@ -2,6 +2,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+      <%= f.input :photo, as: :file,
+                  wrapper_html: { class: 'col-sm-8 mx-auto' },
+                  label_html: { class: 'col-sm-2 control-label' } %>
     <%= f.input :age %>
     <%= f.input :address %>
     <%= f.input :email, required: true, autofocus: true %>

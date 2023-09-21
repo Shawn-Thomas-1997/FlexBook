@@ -1,18 +1,20 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["togglableElement"]
+  static targets = ["togglableElement", "togglableTrainerView", "togglableClientView"]
 
   connect() {
     console.log("Hello from toggle_controller.js")
   }
 
   fire() {
-    this.togglableElementTarget.classList.toggle("d-none");
-  }
-
-  submit() {
-    // You can add logic here to hide the form after submission if needed
-    this.togglableElementTarget.classList.add("d-none");
+    const currentText = this.togglableElementTarget.textContent;
+    this.togglableTrainerViewTarget.classList.toggle("d-none");
+    this.togglableClientViewTarget.classList.toggle("d-none");
+    if (currentText === "Upcoming sessions booked with me.") {
+      this.togglableElementTarget.textContent = "Upcoming sessions booked by me.";
+    } else {
+      this.togglableElementTarget.textContent = "Upcoming sessions booked with me.";
+    }
   }
 }
