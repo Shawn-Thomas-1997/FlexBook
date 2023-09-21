@@ -1,14 +1,15 @@
-<% if user_signed_in? %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695299256/karsten-winegeart-5sGYotxAuUA-unsplash_ushqkd.jpg);">
+</div>
 
-New Booking Page
-<div class="listing-form">
+<% if user_signed_in? %>
+<div class="booking-form">
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-center w-50">
-      <div class="container p-4 rounded shadow">
-        <h1>Create a New Booking</h1>
-        <%= simple_form_for [@listing, @booking] do |f| %>
-          <div class="form-group">
-            <%= f.label :date, class: 'col-sm-2 control-label' %>
+      <div class="bookings-container p-4 rounded shadow">
+        <h1 class="bookings-heading">Create a New Booking</h1>
+        <br>
+        <%= simple_form_for [@listing, @booking], html: { class: 'form', role: 'form' } do |f| %>
+          <div class="booking-form-group">
             <div class="col-sm-10">
               <%= f.input :date,
                           required: true,
@@ -17,22 +18,22 @@ New Booking Page
                           wrapper_html: { class: 'input-group' } %>
             </div>
           </div>
-          <div class="form-group">
+          <div class="booking-form-group">
             <div class="col-sm-10">
               <%= f.input :comment,
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "comment" },
-                          wrapper_html: { class: 'col-sm-12' },
-                          label_html: { class: 'col-sm-2 control-label' } %>
+                          wrapper_html: { class: 'col-sm-12' } %>
             </div>
           </div>
-          <%= f.submit "Create Booking", class: "btn btn-primary shadow-sm mt-3" %>
+          <%= f.submit "Create Booking", class: "btn btn-outline-light shadow-sm mt-3 mx-auto" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
 
 <% else %>
 

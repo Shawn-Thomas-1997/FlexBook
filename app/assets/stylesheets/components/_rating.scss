@@ -1,0 +1,13 @@
+.star {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: 1px solid #fff;
+  margin-right: 5px;
+}
+
+
+.star.filled {
+  background: #fff;
+}
