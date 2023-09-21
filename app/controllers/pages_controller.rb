@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-    @listings = Listing.all
+    @listings = @user.listings
     @users = User.all
   end
 
