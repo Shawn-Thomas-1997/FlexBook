@@ -1,3 +1,24 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px;
+  margin-bottom: 20px;
+}
+
+body, html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container-listing{
+  height: 300px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
 
 .listing-form {
   padding-top: 20px;
@@ -61,4 +82,21 @@ a {
   margin-top: 20px;
   border-radius: 15px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.listing-show-container {
+  max-width: 600px;
+  color:white;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  border: solid 1px #1EA896;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.listing-show-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
 }

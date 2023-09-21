@@ -1,10 +1,16 @@
-<% if user_signed_in? %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695299259/victor-freitas-WvDYdXDzkhs-unsplash_mqvxo5.jpg);">
+</div>
 
-<div class="listing-container">
+<div class="listing-show-container">
+  <% if user_signed_in? %>
 
-  <h1 class="header"><%= @listing.category %></h1>
+  <div class="listing-container">
 
-  <h2><%= @listing.location %></h2>
+    <h1 class="header"><%= @listing.category %></h1>
+
+    <h2><%= @listing.location %></h2>
+
+    <h3><%= @listing.details %></h2>
 
 
     <div class="fixed-element" style="width: 100%; height: 600px;"
@@ -18,8 +24,16 @@
   <%= link_to "Back to Home", root_path %>
 </div>
 
-<% else %>
+
+      <%= link_to "Make a Booking", new_listing_booking_path(@listing, @booking), class:"sub-heading" %>
+      <br>
+      <%= link_to "Back to Home", root_path, class:"sub-heading" %>
+
+  </div>
+
+  <% else %>
 
   <%= render 'shared/log_in_prompt' %>
 
-<% end %>
+  <% end %>
+</div>
