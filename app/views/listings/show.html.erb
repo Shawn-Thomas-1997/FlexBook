@@ -7,9 +7,7 @@
   <h2><%= @listing.location %></h2>
 
   <h3><%= @listing.details %></h2>
-  <% unless current_user.trainer? %>
-      <%= link_to "Make a Booking", new_listing_booking_path(@listing, @booking) %>
-  <% end %>
+  <%= link_to "Make a Booking", new_listing_booking_path(@listing, @booking) %>
   <%= link_to "Back to Home", root_path %>
 </div>
 
