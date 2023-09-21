@@ -1,12 +1,14 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695305448/josh-nuttall-uNQ-TTg_qNY-unsplash_twes8f.jpg);">
+</div>
 <% if user_signed_in? %>
 
   <div class="homepage-container">
     <h1 class="homepage-heading">Bookings</h1>
-    <p>Manage you commitments</p>
-
+    <h2 class="homepage-heading">Manage you commitments</h2>
+    <br>
     <div data-controller="toggle">
-      <button data-action="click->toggle#fire" class="btn btn-outline-primary" data-toggle-target="togglableElement">Upcoming sessions booked by me.</button>
-
+      <button data-action="click->toggle#fire" class="btn btn-outline-light" data-toggle-target="togglableElement">Upcoming sessions booked by me.</button>
+      <br>
       <div data-toggle-target="togglableClientView">
         <div class="listings-row">
           <% @bookings.each do |booking| %>
@@ -53,7 +55,6 @@
 
     </div>
   </div>
-
 <% else %>
 
   <%= render 'shared/log_in_prompt' %>

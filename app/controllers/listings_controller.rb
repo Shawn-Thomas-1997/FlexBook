@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
   def show
     @listing = Listing.find(params[:id])
     @booking = Booking.new
+    @users = User.all
     @user = current_user
   end
 

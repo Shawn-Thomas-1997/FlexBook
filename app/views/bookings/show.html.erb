@@ -1,20 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695299257/jonathan-borba-lrQPTQs7nQQ-unsplash_uj6nt9.jpg);">
+</div>
 <% if user_signed_in? %>
 
-<div class="listing-container">
-<% @user = User.find(@booking.user_id) %>
-  <h1 class="header"><%= @user.fullname %></h1>
+  <div class="listing-show-container">
+    <% @user = User.find(@booking.user_id) %>
+      <h1 class="header"><%= @user.fullname %></h1>
 
-  <h2><%= @booking.date %></h2>
+      <h2><%= @booking.date %></h2>
 
-  <h3><%= @listing.category %></h3>
+      <h3><%= @listing.category %></h3>
 
-  <h3><%= @booking.comment %></h3>
+      <h3><%= @booking.comment %></h3>
 
-  <%= link_to "My Bookings", listing_bookings_path(@booking) %>
-</div>
+      <%= link_to "My Bookings", listing_bookings_path(@booking), class:"sub-heading" %>
+  </div>
 
-<% else %>
+  <% else %>
 
-  <%= render 'shared/log_in_prompt' %>
+    <%= render 'shared/log_in_prompt' %>
 
-<% end %>
+  <% end %>

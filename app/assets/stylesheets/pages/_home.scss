@@ -1,12 +1,20 @@
 // Specific CSS for your home-page
 .homepage-heading {
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 color: white;
+font-size: 80px ;
+letter-spacing: 2px;
 }
+
+.homepage-paragraph {
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 20px ;
+  letter-spacing: 2px;
+  }
 
 .homepage-container {
   justify-content: space-between;
-  padding-top: 20px;
   text-align: center;
   margin: 0 auto;
   background-color: #242423;
@@ -23,4 +31,9 @@ color: white;
 body {
   background-color: #242423;
   margin: 0;
+}
+
+.custom-link {
+  color: #1EA896; /* Change this to your desired color value */
+  /* You can also add other CSS properties to style the links as needed */
 }
