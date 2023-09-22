@@ -20,12 +20,14 @@
         <h1 class="profile-heading" ><%= current_user.fullname %></h1>
       </div>
       <div>
-        <div><h2><em><%= current_user.username %></em></h2>        <% if current_user.certifications.present? %>
-          <div><%= image_tag "https://res.cloudinary.com/dwf9pdzia/image/upload/v1695383839/png-clipart-check-mark-graphics-computer-icons-illustration-certification-leaf-logo_smfn2e.png", class:"certified" %></div>
+        <div><h2><em><%= current_user.username %></em></h2>
+        <% if current_user.certifications.present? %>
+          <div><%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695385959/png-transparent-verified-check-mark-confirmation-checkbox-passed-icon-removebg-preview_yrhnyr.png", class:"certified" %></div>
+          <br>
         <% end %></div>
       </div>
       <p class="profile-paragraph">Gender: <%= current_user.gender %></p>
-      <p class="profile-paragraph">Age: <%= current_user.age %></p>
+      <p class="profsile-paragraph">Age: <%= current_user.age %></p>
       <p class="profile-paragraph">Goal: <%= current_user.goal %></p>
       <p class="profile-paragraph">Fitness Level: <%= current_user.fitness_level %></p>
       <p class="profile-paragraph">Height: <%= current_user.height %></p>
