@@ -1,0 +1,23 @@
+.reviews {
+  padding: 20px;
+  max-width: 600px;
+  color:white;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  border: solid 0.5px #1EA896;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #4b4a4a, #272727);
+  margin-bottom:20px;
+}
+.review {
+  text-align: center; /* Center the content within the review container */
+  margin-bottom: 20px; /* Add margin between reviews */
+}
+
+.review-group-item{
+  text-align: center;
+  list-style-type: none;
+}
