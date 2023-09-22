@@ -1,4 +1,8 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695299259/anastase-maragos-FP7cfYPPUKM-unsplash_j4vco8.jpg); background-position: center bottom;">
+  <div class="homepage-heading">
+    <h1 class="homepage-heading">My Profile</h1>
+  </div>
+
 </div>
 <div class="profile-container">
   <div>
@@ -11,7 +15,7 @@
       </div>
       <% end %>
   </div>
-
+  <div class="listing-show-container">
       <div>
         <h1 class="profile-heading" ><%= current_user.fullname %></h1>
       </div>
@@ -25,7 +29,11 @@
       <h3 class="profile-paragraph"><%= current_user.phone_number %></h3>
 
       <h3 class="profile-paragraph"><%= current_user.email %></h3>
-      <div class="m-2">
+      </div>
+    </div>
+
+      <div class="profile-links">
+
       <%= link_to "Certifications", certifications_path, class: "btn btn-outline-light" %>
 
       <%= link_to "My Training Calendar", calendar_path, class: "btn btn-outline-light" %>
@@ -33,11 +41,10 @@
       <%= link_to "Add New Listing", new_listing_path, class: "btn btn-outline-light" %>
 
       <%= link_to "My Bookings", listing_bookings_path(@listings), class: "btn btn-outline-light" %>
-      </div>
-      <div class="mt-2">
         <%= link_to edit_user_registration_path, class: "btn btn-outline-light" do %>
           Update Details
         <% end %>
+      </div>
       </div>
     <% else %>
       <div>

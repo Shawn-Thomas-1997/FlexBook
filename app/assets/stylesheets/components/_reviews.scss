@@ -21,3 +21,8 @@
   text-align: center;
   list-style-type: none;
 }
+
+.reviews:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
