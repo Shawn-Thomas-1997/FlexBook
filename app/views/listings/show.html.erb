@@ -4,13 +4,14 @@
 <div class="listing-show-container">
   <% if user_signed_in? %>
     <div class="listing-container">
-          <% user = User.find(@listing.user_id) %>
           <% if @listing.photo.present? %>
           <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
           <% else %>
           <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png", class:"profile-photo" %>
           <% end %>
-          <h1 class="listing-heading"><%= @fullname = user.fullname.titleize %></h1>
+          <%= link_to user_path(@listing.user) do %>
+            <h1 class="listing-heading"><%= @fullname = @listing.user.fullname.titleize %></h1>
+          <% end %>
         <h3 class="listing-sub-heading"><%= @listing.category %></h3>
         <h4 class="listing-paragraph"><%= @listing.location %></h4>
         <p class="listing-paragraph"><%= @listing.details %></p>
