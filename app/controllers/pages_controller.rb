@@ -22,19 +22,7 @@ class PagesController < ApplicationController
     @users = User.all
   end
 
-  def certifications
-    @user = current_user
-  end
-
   def calendar
-    @user = current_user
-  end
-
-  def trainer_view
-    @user = current_user
-  end
-
-  def client_view
     @user = current_user
   end
 end
