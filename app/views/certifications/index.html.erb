@@ -1,0 +1,18 @@
+<% if @certifications.present? %>
+  <div>
+    <% @certifications.each do |certification| %>
+      <% if certification.photo.present? %>
+        <%= cl_image_tag certification.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+                <div>
+        <%= link_to "Delete",
+          certification_path(certification),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+          class: 'btn btn-danger btn-sm' %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+
+<%= link_to "Add certifications", new_certification_path, class: "btn btn-outline-light" %>

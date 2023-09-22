@@ -1,8 +1,18 @@
 <div class="homepage-container">
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695299257/sven-mieke-jO6vBWX9h9Y-unsplash_uipepe.jpg);">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dcy2dfahw/image/upload/v1695299257/sven-mieke-jO6vBWX9h9Y-unsplash_uipepe.jpg);">
+  <div class="homepage-heading">
+    <h1 class="homepage-heading">FlexBook</h1>
+    <p class="homepage-paragraph">Your number one fitness service provider</p>
+  </div>
+  </div>
 </div>
-  <h1 class="homepage-heading">FlexBook</h1>
-  <p class="homepage-paragraph">Your number one fitness service provider</p>
+<div class="map-box-container">
+  <div class="map", style="width: 80%; height: 300px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 
 <div class="row justify-content-center">
   <div class="col-sm-8 my-3">
@@ -33,10 +43,5 @@
       <% end %>
     <% end %>
   </div>
-
-  <div style="width: 80%; height: 300px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>
+<br>

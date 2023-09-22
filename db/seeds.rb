@@ -25,10 +25,10 @@ User.create(
   gender: ['male', 'female'].sample
 )
 
-address = ["13 Aandblom Street","15 Elsenham Avenue","52 Blue Valley Avenue",
-  "69 Uys Krige Drive","50 Union Avenue","15 B. Molokoane Road","32 Denne Crescent",
-  "130 Canal Road","41 Skilpadvlei Road","4 Lytton Street","8 Braambos Lane",
-  "3 Lincoln Road","12 Democracy Way",]
+address = ["13 Aandblom Street, Cape Town","15 Elsenham Avenue, Cape Town","52 Blue Valley Avenue, Cape Town",
+  "69 Uys Krige Drive, Cape Town","50 Union Avenue, Cape Town","15 B. Molokoane Road, Cape Town","32 Denne Crescent, Cape Town",
+  "130 Canal Road, Cape Town","41 Skilpadvlei Road, Cape Town","4 Lytton Street, Cape Town","8 Braambos Lane, Cape Town",
+  "3 Lincoln Road, Cape Town","12 Democracy Way, Cape Town","10 Long Street, Cape Town", "Roeland Street, Cape Town"]
 
   fitness_services = ["Personal Training", "Nutritionist", "Physio", "Pilates"]
 

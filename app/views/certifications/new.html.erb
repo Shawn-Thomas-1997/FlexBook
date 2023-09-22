@@ -1,0 +1,6 @@
+<div class="certification-upload-form">
+<%= simple_form_for(@certification) do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, "Submit Certification", class: 'btn btn-outline-light', data: { disable_with: 'Submitting' } %>
+<% end %>
+</div>
