@@ -7,8 +7,8 @@
 <div class="profile-container">
   <div>
     <% if user_signed_in? %>
-      <% if current_user.photo.present? %>
-        <%= cl_image_tag current_user.photo.key, class:"profile-photo" %>
+      <% if @user.photo.present? %>
+        <%= cl_image_tag @user.photo.key, class:"profile-photo" %>
       <% else %>
       <div >
         <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png", class:"profile-photo" %>
@@ -17,38 +17,41 @@
   </div>
   <div class="listing-show-container">
       <div>
-        <h1 class="profile-heading" ><%= current_user.fullname %></h1>
+        <h1 class="profile-heading" ><%= @user.fullname %></h1>
       </div>
-      <div>
-        <div><h2><em><%= current_user.username %></em></h2>
-        <% if current_user.certifications.present? %>
+        <div>
+          <div><h2><em><%= @user.username %></em></h2>
+            <% if @user.certifications.present? %>
           <div><%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695385959/png-transparent-verified-check-mark-confirmation-checkbox-passed-icon-removebg-preview_yrhnyr.png", class:"certified" %></div>
           <br>
-        <% end %></div>
+            <% end %>
+        </div>
       </div>
-      <p class="profile-paragraph">Gender: <%= current_user.gender %></p>
-      <p class="profsile-paragraph">Age: <%= current_user.age %></p>
-      <p class="profile-paragraph">Goal: <%= current_user.goal %></p>
-      <p class="profile-paragraph">Fitness Level: <%= current_user.fitness_level %></p>
-      <p class="profile-paragraph">Height: <%= current_user.height %></p>
-      <p class="profile-paragraph">Weight: <%= current_user.weight %></p>
-      <h3 class="profile-paragraph"><%= current_user.phone_number %></h3>
+      <h2><em><%= @user.username %></em></h2>
+      <p class="profile-paragraph">Gender: <%= @user.gender %></p>
+      <p class="profile-paragraph">Age: <%= @user.age %></p>
+      <p class="profile-paragraph">Goal: <%= @user.goal %></p>
+      <p class="profile-paragraph">Fitness Level: <%= @user.fitness_level %></p>
+      <p class="profile-paragraph">Height: <%= @user.height %></p>
+      <p class="profile-paragraph">Weight: <%= @user.weight %></p>
+      <h3 class="profile-paragraph"><%= @user.phone_number %></h3>
 
-      <h3 class="profile-paragraph"><%= current_user.email %></h3>
+      <h3 class="profile-paragraph"><%= @user.email %></h3>
       </div>
     </div>
 
       <div class="profile-links">
 
       <%= link_to "Certifications", certifications_path, class: "btn btn-outline-light" %>
-
+        <% if current_user == @user %>
       <%= link_to "My Training Calendar", calendar_path, class: "btn btn-outline-light" %>
 
       <%= link_to "Add New Listing", new_listing_path, class: "btn btn-outline-light" %>
 
-      <%= link_to "My Bookings", listing_bookings_path(@listings), class: "btn btn-outline-light" %>
+      <%= link_to "My Bookings", listing_bookings_path(current_user.listings), class: "btn btn-outline-light" %>
         <%= link_to edit_user_registration_path, class: "btn btn-outline-light" do %>
           Update Details
+        <% end %>
         <% end %>
       </div>
       </div>
