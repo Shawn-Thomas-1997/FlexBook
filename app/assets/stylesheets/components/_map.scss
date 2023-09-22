@@ -1,11 +1,11 @@
 .mapboxgl-popup {
-  max-width: 400px;
-  max-height: 200px;
+width:90px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Bebas Neue', sans-serif;
+  color:#1EA896
 }
 
 .map-box-container {
@@ -18,9 +18,16 @@
 
 .map {
   width: 80%;
-  height: 300px;
+  height: 100%;
   margin-bottom: 20px;
   border: 3px solid #1EA896;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
+}
+
+.marker {
+  /* Add styles to make the marker white */
+  img {
+    filter: brightness(0) invert(1); /* Invert the color to white */
+  }
 }
