@@ -19,6 +19,14 @@
       <div>
         <h1 class="profile-heading" ><%= @user.fullname %></h1>
       </div>
+        <div>
+          <div><h2><em><%= @user.username %></em></h2>
+            <% if @user.certifications.present? %>
+          <div><%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695385959/png-transparent-verified-check-mark-confirmation-checkbox-passed-icon-removebg-preview_yrhnyr.png", class:"certified" %></div>
+          <br>
+            <% end %>
+        </div>
+      </div>
       <h2><em><%= @user.username %></em></h2>
       <p class="profile-paragraph">Gender: <%= @user.gender %></p>
       <p class="profile-paragraph">Age: <%= @user.age %></p>

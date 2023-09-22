@@ -1,18 +1,24 @@
-<% if @certifications.present? %>
-  <div>
-    <% @certifications.each do |certification| %>
-      <% if certification.photo.present? %>
-        <%= cl_image_tag certification.photo.key, height: 300, width: 400, crop: :fill %>
+<br>
+<br>
+<div class="listing-show-container">
+  <% if @certifications.present? %>
+    <div>
+      <% @certifications.each do |certification| %>
+        <% if certification.photo.present? %>
+          <%= cl_image_tag certification.photo.key, height: 700, width: 450, crop: :fill %>
+        <% end %>
+                  <div>
+                  <br>
+          <%= link_to "Delete",
+            certification_path(certification),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: 'btn btn-outline-light' %>
+        </div>
+        <br>
       <% end %>
-                <div>
-        <%= link_to "Delete",
-          certification_path(certification),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-          class: 'btn btn-danger btn-sm' %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
-
-
+</div>
+<div class="listing-show-links" >
 <%= link_to "Add certifications", new_certification_path, class: "btn btn-outline-light" %>
+</div>
+    </div>
+  <% end %>

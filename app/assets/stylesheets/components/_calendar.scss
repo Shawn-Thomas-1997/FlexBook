@@ -5,9 +5,22 @@
     text-align: center;
     justify-content: center;
   }
-  .today {
-    background-color: #FAF3DD;
-  }
+  .day {background-color: #1BCB7F}
+  .wday-0 {background-color: #747474}
+  .wday-1 {background-color: #747474}
+  .wday-2 {background-color: #747474}
+  .wday-3 {background-color: #747474}
+  .wday-4 {background-color: #747474}
+  .wday-5 {background-color: #747474}
+  .wday-6 {background-color:#747474}
+  .today {background-color: #747474}
+  .past {background-color:#747474}
+  .future {background-color:#747474}
+  .start-date {background-color: #1BCB7F}
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+  .has-events {background-color: #1BCB7F}
 }
 .meeting {
   color: white;
