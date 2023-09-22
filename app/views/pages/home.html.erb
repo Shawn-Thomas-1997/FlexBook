@@ -31,7 +31,13 @@
     <% @listings.each do |listing| %>
       <%= link_to listing_path(listing) do %>
         <div class="listing">
+        <% @listing = Listing.find(listing.id) %>
           <% user = User.find(listing.user_id) %>
+          <% if @listing.photo.present? %>
+            <%= cl_image_tag @listing.photo.key, class:"profile-photo" %>
+          <% else %>
+            <%= image_tag "https://res.cloudinary.com/dcy2dfahw/image/upload/v1695044898/dumbbell_l3d5ls.png", class:"profile-photo" %>
+          <% end %>
           <h4 class="listing-heading"><%= @fullname = user.fullname.titleize %></h4>
           <br>
           <div class="listing-sub-heading"><strong><%= listing.category %></strong></div>
@@ -44,4 +50,3 @@
     <% end %>
   </div>
 </div>
-<br>
