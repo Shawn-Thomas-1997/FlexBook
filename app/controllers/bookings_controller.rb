@@ -12,6 +12,10 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @listing = Listing.find(params[:listing_id])
+    # Calendar date display option below (monthly view)
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @bookings = Booking.where(start_time:
+      start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
 
   def create
