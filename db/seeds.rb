@@ -17,11 +17,22 @@ User.create(
 # Retrieve the trainer you just created
 trainer = User.find_by(email: "testuser@gmail.com")
 # Create a listing for the trainer
-Listing.create(
-  category: "Personal Training",
-  location: "4 Lytton Street, Cape Town",
-  details: "Are you ready to take your fitness journey to the next level? Look no further! I'm Hugo, a dedicated personal trainer with a passion for helping individuals achieve their fitness goals through specialized weight training.",
-  user_id: trainer.id )
+listing_1 = Listing.create(
+    category: "Personal Training",
+    location: "4 Lytton Street, Cape Town",
+    details: "Are you ready to take your fitness journey to the next level? Look no further! I'm Hugo, a dedicated personal trainer with a passion for helping individuals achieve their fitness goals through specialized weight training.",
+    user_id: trainer.id )
+
+10.times do
+  booking = Booking.new(
+    comment: "Please make me shredded",
+    start_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.tomorrow, format: :default),
+    end_time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.tomorrow, format: :default),
+  )
+  booking.listing = listing_1
+  booking.user = trainer
+  booking.save
+end
 
 
 address = ["4 S Arm Road, Cape Town","17 Rua Bartholomeu Dias Plain, Cape Town","13 Aandblom Street, Cape Town","15 Elsenham Avenue, Cape Town","52 Blue Valley Avenue, Cape Town",

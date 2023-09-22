@@ -9,11 +9,11 @@
 
       <h2 class="listing-sub-heading"><%= @booking.date %></h2>
 
-      <h3><%= @listing.category %></h3>
+      <h3 class="listing-sub-heading"><%= @listing.category %></h3>
 
 
-      <h3><%= @booking.comment %></h3>
-<h4 class="m-4">Your Reviews</h4>
+      <h3 class="listing-paragraph"><%= @booking.comment %></h3>
+<h4 class="listing-sub-heading">Your Reviews</h4>
 <ul class="list-group m-4">
   <% @listing.reviews.each do |review| %>
   <% if review.listing.user_id == current_user.id? %>
@@ -40,11 +40,11 @@
 <br>
 
 <div class="m-4">
-  <h2>Add a Review</h2>
+  <h2 class="listing-heading" >Add a Review</h2>
   <%= simple_form_for [@listing, @review] do |form| %>
     <%= form.input :content %>
     <%= form.input :rating, collection: [0, 1, 2, 3, 4, 5], label: "Select Rating" %>
-    <%= form.submit 'Submit', class: 'btn border' %>
+    <%= form.submit 'Submit', class: "btn btn-outline-light" %>
   <% end %>
 </div>
 
