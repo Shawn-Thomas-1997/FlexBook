@@ -23,15 +23,6 @@ Listing.create(
   details: "Are you ready to take your fitness journey to the next level? Look no further! I'm Hugo, a dedicated personal trainer with a passion for helping individuals achieve their fitness goals through specialized weight training.",
   user_id: trainer.id )
 
-User.create(
-  fullname: "Test User",
-  username: "User Test",
-  address: "4 Lytton Street, Cape Town",
-  email: "testuser@gmail.com",
-  password: 123456,
-  trainer: false,
-  gender: 'male',
-)
 
 address = ["4 S Arm Road, Cape Town","17 Rua Bartholomeu Dias Plain, Cape Town","13 Aandblom Street, Cape Town","15 Elsenham Avenue, Cape Town","52 Blue Valley Avenue, Cape Town",
   "69 Uys Krige Drive, Cape Town","50 Union Avenue, Cape Town","15 B. Molokoane Road, Cape Town","32 Denne Crescent, Cape Town",

@@ -9,21 +9,39 @@
         <h1 class="listing-heading">Create a New Booking</h1>
         <br>
         <%= simple_form_for [@listing, @booking], html: { class: 'form', role: 'form' } do |f| %>
-          <div class="booking-form-group">
+<!--          <div class="booking-form-group">
             <div class="col-sm-10">
-              <%= f.input :date,
-                          required: true,
+              <%#= f.input :date,-->
+<!--                          required: true,
                           autofocus: true,
                           input_html: { type: "date-local", autocomplete: "off" },
                           wrapper_html: { class: 'input-group' } %>
             </div>
-          </div>
+          </div>-->
           <div class="booking-form-group">
             <div class="col-sm-10">
               <%= f.input :comment,
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "comment" },
+                          wrapper_html: { class: 'col-sm-12' } %>
+            </div>
+          </div>
+          <div class="booking-form-group">
+            <div class="col-sm-10">
+              <%= f.input :start_time,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "start_time" },
+                          wrapper_html: { class: 'col-sm-12' } %>
+            </div>
+          </div>
+          <div class="booking-form-group">
+            <div class="col-sm-10">
+              <%= f.input :end_time,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "end_time" },
                           wrapper_html: { class: 'col-sm-12' } %>
             </div>
           </div>
