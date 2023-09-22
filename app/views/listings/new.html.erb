@@ -33,6 +33,7 @@
                           wrapper_html: { class: 'col-sm-12' },
                           label_html: { class: 'listing-paragraph col-sm-2 control-label' } %>
           </div>
+          <%= f.input :photo, as: :file %>
             <%= f.submit "Create Listing", class: "btn btn-outline-light shadow-sm mt-3" %>
           <% end %>
       </div>

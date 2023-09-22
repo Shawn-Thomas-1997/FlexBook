@@ -3,8 +3,9 @@
 <% if user_signed_in? %>
 
   <div class="listing-show-container">
+  <% @trainer = User.find(@booking.listing.user_id) %>
     <% @user = User.find(@booking.user_id) %>
-      <h1 class="homepage-heading"><%= @user.fullname %></h1>
+      <h1 class="homepage-heading"><%= @trainer.fullname %></h1>
 
       <h2 class="listing-sub-heading"><%= @booking.date %></h2>
 
