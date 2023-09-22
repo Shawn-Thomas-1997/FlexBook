@@ -1,12 +1,14 @@
 .simple-calendar {
   table {
-    min-height: 80vh;
+    height: 40vh;
+    width: 40vw;
+    text-align: center;
+    justify-content: center;
   }
   .today {
     background-color: #FAF3DD;
   }
 }
-
 .meeting {
   color: white;
   padding: 8px 24px;
@@ -14,8 +16,19 @@
   background: #1EDD88;
   transition: background 0.3s ease;
 }
-
 .meeting:hover {
   background: #1BCB7F;
   color: white;
+}
+
+.calendar-container {
+  text-align: center;
+  justify-content: center;
+  width:600px;
+  margin-top: 30px;
+}
+
+.booking {
+  text-align: center;
+  justify-content: center;
 }

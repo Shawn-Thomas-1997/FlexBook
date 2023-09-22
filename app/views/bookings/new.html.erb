@@ -2,7 +2,7 @@
 </div>
 
 <% if user_signed_in? %>
-<div class="booking-form">
+<div class="booking-form-group">
   <div class="d-flex justify-content-center align-items-center">
     <div class="text-center w-50">
       <div class="bookings-container p-4 rounded shadow">
@@ -30,25 +30,21 @@
           <%= f.submit "Create Booking", class: "btn btn-outline-light shadow-sm mt-3 mx-auto" %>
         <% end %>
       </div>
+      <div class="calendar-container">
+        <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, bookings| %>
+          <%= date %>
+
+          <% bookings.each do |booking| %>
+            <div class="booking">
+              <p><%= booking.name %></p>
+              <small><%= booking.time unless booking.multi_days? %></small>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="calendar-container">
-  <%= month_calendar(events: @bookings, end_attribute: :end_time) do |date, bookings| %>
-    <%= date %>
-
-    <% bookings.each do |booking| %>
-      <div class="booking">
-        <p><%= booking.name %></p>
-        <small><%= booking.time unless booking.multi_days? %></small>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
 <% else %>
-
   <%= render 'shared/log_in_prompt' %>
-
 <% end %>
